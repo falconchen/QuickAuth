@@ -21,10 +21,10 @@ require_once('secure.inc.php');
 				<h4>Information to be accessed</h4>
 				* <label for="form-auth-openid"></label><input type="checkbox" id="form-auth-openid" class="form-group"
 				                                               checked disabled/>&nbsp;<span>OpenID</span><br/>
-				* <label for="form-auth-email"></label><input type="checkbox" id="form-auth-email" class="form-group"/>&nbsp;<span>Email</span><br/>
-				* <label for="form-auth-verified"></label><input type="checkbox" id="form-auth-verified"
+				* <label for="form-auth-email"></label><input type="checkbox" checked disabled id="form-auth-email" class="form-group"/>&nbsp;<span>Email</span><br/>
+				* <label for="form-auth-verified"></label><input type="checkbox" checked disabled id="form-auth-verified"
 				                                                 class="form-group"/>&nbsp;<span>Verified</span><br/>
-				* <label for="form-auth-role"></label><input type="checkbox" id="form-auth-role" class="form-group"/>&nbsp;<span>Role</span><br/>
+				* <label for="form-auth-role"></label><input type="checkbox" checked disabled id="form-auth-role" class="form-group"/>&nbsp;<span>Role</span><br/>
 				<br/>
 				<button id="form-auth-accept" type="button" class="btn btn-primary">&nbsp;Accept&nbsp;</button>
 				<button id="form-auth-decline" type="button" class="btn btn-default">&nbsp;Decline&nbsp;</button>

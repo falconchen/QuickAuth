@@ -70,6 +70,15 @@ function user_register(CRObject $user)
 		$success = UserManager::add($user);
 		$res['errno'] = $success ? Code::SUCCESS : Code::UNKNOWN_ERROR;
 	}
+	if( defined('ALLOW_EMAIL_DOMAINS') && strlen(ALLOW_EMAIL_DOMAINS)>0 ){
+		$allow_domains = explode(',',ALLOW_EMAIL_DOMAINS);
+		$parts = explode('@', $email);  // 将字符串按照@符号分割成数组
+		$domain = array_pop($parts);   // 取出数组最后一个元素，即域名部分
+		if( !in_array($domain,$allow_domains) ){
+			$res['errno'] = Code::NOT_ALLOW_EMAIL_DOMAIN;
+		}
+	}
+	
 	$log = new CRObject();
 	$log->set('scope', $username);
 	$log->set('tag', 'user.signup');

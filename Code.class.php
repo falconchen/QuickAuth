@@ -29,6 +29,7 @@ class Code
 	const USER_IS_BLOCKED = 21;
 	const USER_IS_REMOVED = 22;
 	const EMAIL_IS_NOT_VERIFIED = 33;
+	const NOT_ALLOW_EMAIL_DOMAIN = 40; //不允许的email 后缀
 
 	const USERNAME_MISMATCH_EMAIL = 23;
 
@@ -158,6 +159,10 @@ class Code
 
 			case Code::OAUTH_DISABLED:
 				return 'OAuth is temporally disabled !';
+
+			case Code::NOT_ALLOW_EMAIL_DOMAIN:
+				//这个email地址不允许注册服务
+				return 'This email address is not allowed to register for the service.';
 
 			default:
 				return 'Unknown error(' . $errno . ') !';
