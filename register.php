@@ -23,7 +23,7 @@ require_once('secure.inc.php');
 							<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 						</div>
 						<input type="text" class="form-control" id="form-signup-username" placeholder="Username"
-						       required autofocus/>
+						       required autofocus maxlength="12"/>
 					</div>
 				</div>
 				<div class="form-group">
