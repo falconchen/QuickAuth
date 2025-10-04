@@ -1,5 +1,7 @@
 RewriteEngine on
 
+RewriteRule ^/static/config.js /static/config.js.php
+
 RewriteRule ^service$ /ajax.php
 RewriteRule ^login$ /login.php
 RewriteRule ^register$ /register.php
