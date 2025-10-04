@@ -91,10 +91,20 @@ class UserManager
 		$offset = $rule->getInt('offset', 0);
 		$limit = $rule->getInt('limit', -1);
 		$selected_rows = array('username', 'email', 'email_verified', 'role', 'reg_time', 'reg_ip');
-		$where_arr = array();
+		$where = array();
+		$opts = array();
+		// add search
+		$search = trim($rule->get('search',''));
+		if( strlen($search) > 0 ){
+			$where['email'] = '"%'. $search . '%"';			
+			$opts['email'] = 'LIKE';
+		}
+		
+		
 		$builder = new SQLBuilder();
 		$builder->select('qa_user', $selected_rows);
-		$builder->where($where_arr);
+		$builder->where($where,$opts);
+		
 		$builder->limit($offset, $limit);
 		$sql = $builder->build();
 		$params = array();

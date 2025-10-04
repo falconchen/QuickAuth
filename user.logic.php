@@ -276,6 +276,7 @@ function reset_pwd_send_code(CRObject $user)
 		$res['errno'] = Code::USER_NOT_EXIST;
 		return $res;
 	}
+	$user_arr = UserManager::getByEmail($user->get('email'));
 	if ($user_arr['email'] !== $user->get('email')) {
 		$res['errno'] = Code::USERNAME_MISMATCH_EMAIL;
 		return $res;

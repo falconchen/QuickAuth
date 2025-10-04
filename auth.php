@@ -58,4 +58,5 @@ if (!isset($res['msg']))
 	$res['msg'] = Code::getErrorMsg($res['errno']);
 $json = json_encode($res);
 header('Content-type: application/json');
+
 echo $json;

